@@ -1,0 +1,9 @@
+<ng-container *ngIf="label.hint != displayHints.None" >
+  <div [ngSwitch]="label.hint">
+    <span *ngSwitchCase="displayHints.TextSingleLine;">{{ label.text }}</span>
+    <pre *ngSwitchCase="displayHints.TextParagraph;">{{ label.text }}</pre>
+    <mat-icon *ngSwitchCase="displayHints.Icon;">{{ label.name }}</mat-icon>
+    <img *ngSwitchCase="displayHints.ImageLink;" [src]="label.url" [width]="label.width" [height]="label.height">
+    <span *ngSwitchDefault>Unknown option passed in</span>
+  </div>
+</ng-container>
